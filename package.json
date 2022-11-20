@@ -1,5 +1,5 @@
 {
-  "name": "aka.js",
+  "name": "aka",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -11,13 +11,18 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "devDependencies": {
     "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
     "typescript": "^4.9.3"
   },
   "dependencies": {
+    "@vitejs/plugin-react": "^2.2.0",
     "cac": "^6.7.14",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "vite": "^3.2.4"
   }
 }
