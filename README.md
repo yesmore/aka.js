@@ -1,3 +1,5 @@
+<img width="30%" align="left" src='https://raw.githubusercontents.com/yesmore/img/main/img/aka.png'/>
+
 # aka.js - Quickly generate static sites
 
 ## Feature
