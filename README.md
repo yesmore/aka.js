@@ -1,5 +1,5 @@
 <div>
-<img width="30%" src='https://raw.githubusercontents.com/yesmore/img/main/img/aka.png'/>
+<img width="20%" src='https://raw.githubusercontents.com/yesmore/img/main/img/aka.png'/>
 </div>
 
 # aka.js - Quickly generate static sites
