@@ -1,3 +1,6 @@
+/**
+ * 客户端的入口
+ */
 import { createRoot } from "react-dom/client";
 import { App } from "./App";
 

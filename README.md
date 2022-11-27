@@ -9,7 +9,7 @@
 #EC63AA
 ...
 
-## Development and Debug
+## Development and debug
 
 ```bash
 # complile project (run tsc -w)
@@ -17,6 +17,14 @@ pnpm start
 
 # then debug aka-cli
 aka dev docs 
+```
+
+```bash
+# build ssr
+aka build docs
+
+# start serve
+pnpm preview
 ```
 
 ## License
