@@ -1,0 +1,36 @@
+{
+  "name": "aka",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsup --watch",
+    "build": "tsup",
+    "preview": "cd docs/build && serve ."
+  },
+  "bin": {
+    "aka": "bin/aka.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "ora": "^6.1.2",
+    "rollup": "^3.4.0",
+    "serve": "^14.0.1",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^2.2.0",
+    "cac": "^6.7.14",
+    "fs-extra": "^10.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vite": "^3.2.4"
+  }
+}
