@@ -6,10 +6,12 @@
  */
 import { build as viteBuild, InlineConfig } from "vite";
 import type { RollupOutput } from "rollup";
+import ora from "ora";
 import { join } from "path";
-import * as fs from "fs-extra";
-import { CLIENT_ENTRY_PATH, SERVER_ENTRY_PATH } from "./constants";
+import fs from "fs-extra";
 import pluginReact from "@vitejs/plugin-react";
+import { pathToFileURL } from "url";
+import { CLIENT_ENTRY_PATH, SERVER_ENTRY_PATH } from "./constants";
 
 export async function bundle(root: string) {
   const resolveViteConfig = (isServer: boolean): InlineConfig => ({
@@ -28,7 +30,8 @@ export async function bundle(root: string) {
     plugins: [pluginReact()],
   });
 
-  console.log(`Building client + server bundles...`);
+  const spinner = ora();
+  // spinner.start(`Building client + server bundles...`);
 
   try {
     const [clientBundle, serverBundle] = await Promise.all([
@@ -77,7 +80,10 @@ export async function build(root: string = process.cwd()) {
   const [clientBundle] = await bundle(root);
   // 引入 ssr 入口模块
   const serverEntryPath = join(root, ".temp", "ssr-entry.js");
-  const { render } = require(serverEntryPath);
+  // 'pathToFileURL' 兼容windows
+  const { render } = await import(
+    pathToFileURL(serverEntryPath) as unknown as string
+  );
   // 服务端渲染，产出 HTML
   await renderPage(render, root, clientBundle);
 }
