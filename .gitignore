@@ -2,6 +2,8 @@
 node_modules
 /dist
 
+build
+.temp
 
 # local env files
 .env.local
@@ -21,4 +23,5 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
 

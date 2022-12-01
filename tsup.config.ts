@@ -8,8 +8,8 @@ export default defineConfig({
   outDir: 'dist',
   format: ['cjs', 'esm'],
   dts: true,
-  shims: true // polyfill
-  // banner: {
-  //   js: 'import { createRequire } from "node:module"; const require = createRequire(import.meta.url);',
-  // },
+  shims: true, // polyfill
+  banner: {
+    js: 'import { createRequire } from "node:module"; const require = createRequire(import.meta.url);'
+  } // fix "throw new Error('Dynamic require of "' + x + '" is not supported')" bug
 });
