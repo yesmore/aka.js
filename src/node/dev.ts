@@ -1,6 +1,6 @@
-import { createServer } from "vite";
-import { pluginIndexHtml } from "./plugin-aka/indexHtml";
-import pluginReact from "@vitejs/plugin-react";
+import { createServer } from 'vite';
+import { pluginIndexHtml } from './plugin-aka/indexHtml';
+import pluginReact from '@vitejs/plugin-react';
 
 /**
  * 开发阶段使用的 HTTP Server:
@@ -11,6 +11,6 @@ import pluginReact from "@vitejs/plugin-react";
 export function createDevServer(root: string) {
   return createServer({
     root,
-    plugins: [pluginIndexHtml(), pluginReact()],
+    plugins: [pluginIndexHtml(), pluginReact()]
   });
 }
