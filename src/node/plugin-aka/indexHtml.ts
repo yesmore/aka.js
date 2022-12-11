@@ -1,5 +1,5 @@
 import { Plugin } from 'vite';
-import { readFile } from 'fs/promises';
+import fs from 'fs-extra';
 import { DEFAULT_HTML_PATH, CLIENT_ENTRY_PATH } from '../constants';
 
 // Parse the template.html file to the root url of the app.
@@ -28,7 +28,7 @@ export function pluginIndexHtml(): Plugin {
     configureServer(server) {
       return () => {
         server.middlewares.use(async (req, res, next) => {
-          let html = await readFile(DEFAULT_HTML_PATH, 'utf-8');
+          let html = await fs.readFile(DEFAULT_HTML_PATH, 'utf-8');
 
           try {
             // HMR support

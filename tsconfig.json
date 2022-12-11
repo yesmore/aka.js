@@ -3,9 +3,14 @@
     "module": "ESNext",
     "outDir": "dist",
     "rootDir": "src",
+    "baseUrl": "src",
     "target": "ESNext",
     "jsx": "react-jsx",
     "moduleResolution": "node",
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "paths": {
+      "shared/*": ["shared/*"]
+    }
+  },
+  "include": ["e2e/**/*.ts", "src/**/*"]
 }

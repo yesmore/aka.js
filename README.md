@@ -55,19 +55,21 @@ pnpm test:e2e
 
 ## 如何使用 aka.js
 
-在docs目录下编辑你的项目，并开启调试(支持hmr)：
+> Regist all commands here: src/node/cli.ts
+
+在docs目录下编辑你的项目，并开启调试(支持hmr):
 
 ```bash
 aka dev docs 
-# and visit http://127.0.0.1:5173/
+# then visit http://127.0.0.1:5173/
 ```
 
-### 打包你的项目
+### Build
 ```bash
 # build ssr
 aka build docs
 
-# start serve to preview
+# then start serve to preview
 cd docs/build && serve . 
 # or "pnpm preview"
 ```

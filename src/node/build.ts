@@ -6,7 +6,7 @@
  */
 import { build as viteBuild, InlineConfig } from 'vite';
 import type { RollupOutput } from 'rollup';
-import ora from 'ora';
+// import ora from 'ora';
 import { join } from 'path';
 import fs from 'fs-extra';
 import pluginReact from '@vitejs/plugin-react';
@@ -26,11 +26,11 @@ export async function bundle(root: string) {
           format: isServer ? 'cjs' : 'esm'
         }
       }
-    },
-    plugins: [pluginReact()]
+    }
+    // plugins: [pluginReact()]
   });
 
-  const spinner = ora();
+  // const spinner = ora();
   // spinner.start(`Building client + server bundles...`);
 
   try {
