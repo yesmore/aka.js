@@ -3,7 +3,7 @@ import pluginReact from '@vitejs/plugin-react';
 import { pluginIndexHtml } from './plugin-aka/indexHtml';
 import { pluginConfig } from './plugin-aka/config';
 import { PACKAGE_ROOT } from './constants';
-import { resolveConfig } from './config';
+import { resolveConfig } from './configParser';
 
 /**
  * 开发阶段使用的 HTTP Server:
@@ -16,10 +16,10 @@ export async function createDevServer(
   restartServer: () => Promise<void>
 ) {
   const config = await resolveConfig(root, 'serve', 'development');
-  console.log(config);
+  // console.log(config);
 
   return createServer({
-    root,
+    root: PACKAGE_ROOT,
     plugins: [
       pluginIndexHtml(),
       pluginReact(),

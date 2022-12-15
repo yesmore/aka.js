@@ -1,6 +1,6 @@
 import { defineConfig } from '../dist';
 
 export default defineConfig({
-  title: 'xxx11',
+  title: 'xxx21',
   description: 'xx'
 });

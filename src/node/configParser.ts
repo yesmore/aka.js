@@ -45,10 +45,7 @@ export async function resolveUserConfig(
 
   if (result) {
     const { config: rawConfig = {} as RawConfig } = result;
-    // 三种情况:
-    // 1. object
-    // 2. promise
-    // 3. function
+    // 三种: object/promise/function
     const userConfig = await (typeof rawConfig === 'function'
       ? rawConfig()
       : rawConfig);
