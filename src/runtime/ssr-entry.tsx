@@ -1,10 +1,15 @@
 /**
  * SSR(服务端) 的入口
  */
-import { App } from "./app";
-import { renderToString } from "react-dom/server";
+import { App } from './app';
+import { renderToString } from 'react-dom/server';
+import { StaticRouter } from 'react-router-dom/server';
 
 // For ssr component render
 export function render() {
-  return renderToString(<App />);
+  return renderToString(
+    <StaticRouter location={'/guide'}>
+      <App />
+    </StaticRouter>
+  );
 }

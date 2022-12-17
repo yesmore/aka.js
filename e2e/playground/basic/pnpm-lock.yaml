@@ -1,0 +1,7 @@
+lockfileVersion: 5.4
+
+specifiers:
+  akajs: ../../..
+
+dependencies:
+  akajs: link:../../..

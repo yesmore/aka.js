@@ -1,0 +1,17 @@
+{
+  "name": "basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "aka dev docs",
+    "build": "aka build docs",
+    "preview": "aka start docs"
+  },
+  "dependencies": {
+    "akajs": "../../.."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
