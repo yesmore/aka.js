@@ -2,6 +2,7 @@ import { createServer } from 'vite';
 import pluginReact from '@vitejs/plugin-react';
 import { pluginIndexHtml } from './plugin-aka/indexHtml';
 import { pluginConfig } from './plugin-aka/config';
+import { pluginRoutes } from './plugin-routes';
 import { PACKAGE_ROOT } from './constants';
 import { resolveConfig } from './configParser';
 
@@ -22,8 +23,13 @@ export async function createDevServer(
     root: PACKAGE_ROOT,
     plugins: [
       pluginIndexHtml(),
-      pluginReact(),
-      pluginConfig(config, restartServer)
+      pluginReact({
+        jsxRuntime: 'automatic'
+      }),
+      pluginConfig(config, restartServer),
+      pluginRoutes({
+        root: config.root
+      })
     ],
     server: {
       fs: {

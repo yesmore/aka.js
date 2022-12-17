@@ -3,3 +3,9 @@ declare module 'aka:site-data' {
   const siteData: UserConfig;
   export default siteData;
 }
+
+declare module 'aka:routes' {
+  import { RouteObject } from 'react-router-dom';
+  const routes: RouteObject[];
+  export { routes };
+}
