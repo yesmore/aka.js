@@ -9,17 +9,16 @@ import type { RollupOutput } from 'rollup';
 // import ora from 'ora';
 import path, { join } from 'path';
 import fs from 'fs-extra';
-import pluginReact from '@vitejs/plugin-react';
 import { pathToFileURL } from 'url';
 import { CLIENT_ENTRY_PATH, SERVER_ENTRY_PATH } from './constants';
 import { SiteConfig } from 'shared/types';
-import { pluginConfig } from './plugin-aka/config';
+import { createVitePlugins } from './vitePlugins';
 
 export async function bundle(root: string, config: SiteConfig) {
   const resolveViteConfig = (isServer: boolean): InlineConfig => ({
     mode: 'production',
     root,
-    plugins: [pluginReact(), pluginConfig(config)],
+    plugins: createVitePlugins(config),
     ssr: {
       // 注意加上这个配置，防止 cjs 产物中 require ESM 的产物，因为 react-router-dom 的产物为 ESM 格式
       noExternal: ['react-router-dom']

@@ -1,3 +1,6 @@
+/**
+ * 解析用户配置文件插件
+ */
 import { join, relative } from 'path';
 import { Plugin } from 'vite';
 import { SiteConfig } from 'shared/types/index';
