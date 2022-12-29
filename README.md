@@ -1,6 +1,7 @@
 <div>
-<img width="20%" src='https://raw.githubusercontents.com/yesmore/img/main/img/aka.png'/>
+<img width="20%" src='https://raw.githubusercontents.com/yesmore/aka.js/main/assets/aka.png'/>
 </div>
+
 
 # aka.js - Quickly generate static sites
 
@@ -9,7 +10,7 @@
 #EC63AA
 ...
 
-## Development and debug
+## Ⅰ.Development and debug
 
 ### 开发中调试命令
 
@@ -53,7 +54,7 @@ pnpm prepare:e2e
 pnpm test:e2e
 ```
 
-## 如何使用 aka.js
+## Ⅱ.如何使用 aka.js
 
 > Regist all commands here: src/node/cli.ts
 
@@ -64,7 +65,7 @@ aka dev docs
 # then visit http://127.0.0.1:5173/
 ```
 
-### Build
+### 打包你的成果
 ```bash
 # build ssr
 aka build docs
