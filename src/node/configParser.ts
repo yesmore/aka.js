@@ -23,6 +23,7 @@ export async function resolveConfig(
     configPath: configPath,
     siteData: resolveSiteData(userConfig as UserConfig)
   };
+
   return siteConfig;
 }
 

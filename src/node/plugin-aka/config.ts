@@ -1,7 +1,11 @@
+/**
+ * 解析用户配置文件插件
+ */
 import { join, relative } from 'path';
 import { Plugin } from 'vite';
 import { SiteConfig } from 'shared/types/index';
 import { PACKAGE_ROOT } from 'node/constants';
+import { normalizePath } from 'vite';
 
 const SITE_DATA_ID = 'aka:site-data';
 
@@ -33,10 +37,12 @@ export function pluginConfig(
       }
     },
     async handleHotUpdate(ctx) {
-      const customWatchedFiles = [config.configPath];
-      const include = (id: string) =>
-        customWatchedFiles.some((file) => id.includes(file));
+      // fixed: normalizePath "/" -> "\"
+      const customWatchedFiles = [normalizePath(config.configPath)];
 
+      const include = (id: string) => {
+        return customWatchedFiles.some((file) => id.includes(file));
+      };
       if (include(ctx.file)) {
         console.log(
           `\n${relative(config.root, ctx.file)} changed, restarting server...`
